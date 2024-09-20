@@ -30,7 +30,7 @@ public class TP0_Calculator {
         if (Operator==1){
             result=Operande1+Operande2;
         }
-        Else if (Operator==2){
+        else if (Operator==2){
             result=Operande1-Operande2;
     }
     }
