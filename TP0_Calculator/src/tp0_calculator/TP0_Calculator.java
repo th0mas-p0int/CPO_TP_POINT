@@ -19,10 +19,14 @@ public class TP0_Calculator {
         int Operator;
         int Operande1;
         int Operande2;
-        int result;
+        int result=0;
         Scanner sc = new Scanner(System.in);
         System.out.println("Please enter the operator: \n1) add \n2) substract \n3) multiply \n4) divide \n5) modulo");
         Operator=sc.nextInt();
+        if (Operator < 1 || Operator > 5) {
+            System.out.println("Erreur: opérateur invalide !");
+            return; // Sortir du programme
+        }
         System.out.println("Entrer une première valeur :");
         Operande1=sc.nextInt();
         System.out.println("Entrer une seconde valeur :");
@@ -32,7 +36,17 @@ public class TP0_Calculator {
         }
         else if (Operator==2){
             result=Operande1-Operande2;
-    }
+        }
+        else if (Operator==3){
+            result=Operande1*Operande2;
+        }
+        else if (Operator==4){
+            result=Operande1/Operande2;
+        }
+        else if (Operator==5){
+            result=Operande1%Operande2;
+        }
+        System.out.println("Le résultat est : " + result);
     }
     
 }
