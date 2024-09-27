@@ -11,19 +11,75 @@ import java.util.Scanner;
  * @author thomaspoint
  */
 public class TP1_convertisseur_POINT {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-    double a,b,K;
-    Scanner sc = new Scanner(System.in);
     
-    System.out.println("Choisir un nombre : ");
-    a = sc.nextDouble();
-    System.out.println("Votre nombre est : "+a+".");
-    K=273.15+a;
-    System.out.println("On a donc une temperature en Kelvin de "+K+".");
+    public static double CelciusVersKelvin (double tCelcius) {
+    return(tCelcius + 273.15);
     }
-    
+     public static double KelvinVersCelcius (double tCelcius) {
+    return(tCelcius - 273.15);
+    }
+     public static double FarenheitVersCelcius (double tCelcius) {
+    return(tCelcius-32)/1.8;
+    }
+     public static double CelciusVersFarenheit (double tCelcius) {
+    return(tCelcius*1.8)+32;
+    }
+     public static double KelvinVersFarenheit (double tCelcius) {
+    return(tCelcius-273.15)*1.8+32;
+    }
+     public static double FarenheitVersKelvin (double tCelcius) {
+    return(tCelcius-32)/1.8+273.15;
+    }
+   
+    public static void main(String[] args) {
+    double nbr,result = 0;
+    double CK,KC,FC,CF,KF,FK;
+    int calcul;
+   
+ 
+    Scanner sc=new Scanner(System.in);
+   
+    System.out.println("Bonjour, saisissez une valeur :");
+    nbr=sc.nextDouble();
+    System.out.println("Saisissez la conversion que vous souhaiter effectuer :\n1) De Celvius à Kelvin \n2) De Kelvin à Celcius \n3) De Farenheit à Celcius\n4) De Celcius à Farenheit\n5) De Kelvin à Farenheit\n6) De Farenheit à Kelvin");
+    calcul=sc.nextInt();
+    if (calcul < 1 || calcul > 6) {
+            System.out.println("Erreur : La valeur doit être comprise entre 1 et 6.");
+    System.exit(0);    
+    }
+   
+     CK=CelciusVersKelvin(nbr);
+     KC=KelvinVersCelcius(nbr);
+     FC=FarenheitVersCelcius(nbr);
+     CF=CelciusVersFarenheit(nbr);
+     KF=KelvinVersFarenheit(nbr);
+     FK= FarenheitVersKelvin(nbr);
+     
+      switch(calcul) {
+     case 1:
+            result=CK;
+            break;
+     case 2:    
+         result=KC;
+         break;
+     case 3:
+         result=FC;
+         break;
+     case 4:
+         result=CF;
+         break;
+     case 5:
+         result=KF;
+         break;
+     case 6:
+         result=FK;
+         break;
+     default:
+         break;
+    }
+    System.out.println("Ceci nous donne un résultat  de "+result +", avec initalement "+nbr +"");
+   
+   
+    }
+
 }
