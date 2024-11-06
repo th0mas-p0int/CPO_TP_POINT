@@ -4,6 +4,12 @@
  */
 package tp3_heroic_fantasy_point;
 
+import Personnages.Personnage;
+import Personnages.Magicien;
+import Personnages.Guerrier;
+import Armes.baton;
+import Armes.Epee;
+import Armes.Arme;
 import java.util.ArrayList;
 /**
  *
@@ -28,8 +34,26 @@ public class TP3_Heroic_Fantasy_POINT {
             Arme arme = armes.get(i);
             System.out.println("Arme "+ (i+1) + ":" + arme);
         }
-            
+           
+        ArrayList<Personnage> perso = new ArrayList<Personnage>();
         
+        Magicien Gandalf = new Magicien("Gandalf", 65, true);
+        Magicien Garcimor = new Magicien("Garcimor", 44, false);
+        Guerrier Conan = new Guerrier("Conan", 78, false);
+        Guerrier Lannister = new Guerrier("Lannister", 45, true);
         
+        perso.add(Gandalf);
+        perso.add(Garcimor);
+        perso.add(Conan);
+        perso.add(Lannister);
+        
+        System.out.println("Liste des personnages");
+        for (int j = 0; j < perso.size(); j++) {
+            Personnage personnage = perso.get(j);
+            System.out.println((j+1) + ":" + personnage);
+        }
+    ArrayList<Arme> weapon = new ArrayList<Arme>();
+    
     }
+    
 }
