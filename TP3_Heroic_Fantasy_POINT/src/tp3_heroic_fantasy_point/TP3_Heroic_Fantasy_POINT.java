@@ -41,19 +41,30 @@ public class TP3_Heroic_Fantasy_POINT {
         Magicien Garcimor = new Magicien("Garcimor", 44, false);
         Guerrier Conan = new Guerrier("Conan", 78, false);
         Guerrier Lannister = new Guerrier("Lannister", 45, true);
+        Magicien Harry = new Magicien("Harry", 100, true);
+        Guerrier Batman = new Guerrier("Batman", 1000, false);
         
         perso.add(Gandalf);
         perso.add(Garcimor);
         perso.add(Conan);
         perso.add(Lannister);
         
-        System.out.println("Liste des personnages");
+        System.out.println("\nListe des personnages");
         for (int j = 0; j < perso.size(); j++) {
             Personnage personnage = perso.get(j);
-            System.out.println((j+1) + ":" + personnage);
+            System.out.println("Nom " + (j+1) + " " + personnage);
         }
-    ArrayList<Arme> weapon = new ArrayList<Arme>();
+        
+        Gandalf.equiperArme("Chêne");
+        Conan.equiperArme("Durandal");
+        
+        System.out.println("\nListe des personnages après ajout et équipement des armes:");
+        for (int j = 0; j < perso.size(); j++) {
+            Personnage personnage = perso.get(j);
+            System.out.println("Nom " + (j + 1) + "  " + personnage);
     
     }
     
+    }
 }
+// question 38 en cours
